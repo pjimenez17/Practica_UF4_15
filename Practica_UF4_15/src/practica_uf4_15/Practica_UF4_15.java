@@ -11,44 +11,54 @@ public class Practica_UF4_15 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Baraja b = new Baraja();
-        
-        
+        Baraja b = null;
         boolean sortir = false;
         
         do{
-            System.out.println("1. Barrejar cartes \n 2. Següent carta \n 3. Cartes disponibles \n 4. Demanar cartes \n 5. Repartir Cartes \n 6. Veure Munt");
+            System.out.println("1. Baralla Española \n2. Baralla Francesa");
+            int opcioBaralla = Utils.LlegirInt("Selecciona una opcio: ");
+            
+            switch(opcioBaralla){
+                case 1 ->{
+                    b = new BarajaEspanola();
+                    sortir = true;
+                }case 2 ->{
+                    b = new BarajaFrancesa();
+                    sortir = true;
+                }default ->{
+                    System.out.println("ERROR");
+                }
+            }
+        
+        }while(!sortir);
+        
+        sortir = false;
+        
+        do{
+            System.out.println("1. Següent carta \n2. Cartes disponibles \n3. Demanar cartes \n4. Repartir Cartes \n5. Veure Munt");
             int opcio = Utils.LlegirInt("Selecciona una opció: ");
             
             switch(opcio){
                 case 1 ->{
-                    b.barrejar();
-                    System.out.println("Cartas Barallades \n");
+                    System.out.println(b.seguentCarta());
                 }
                 case 2 ->{
-                    System.out.println(b.seguentCarta());
-                    
+                    System.out.println(b.cartesDisponibles());                    
                 }
                 case 3 ->{
-                    System.out.println(b.cartesDisponibles());
+                    int numCartes = Utils.LlegirInt("Quantes cartes vols: ");                  
+                    System.out.println(b.demanarCarta(numCartes));
                     
                 }
                 case 4 ->{
                     int numCartes = Utils.LlegirInt("Quantes cartes vols: ");
-                   
-                    System.out.println(b.demanarCarta(numCartes));
+                    b.repartirCartes(numCartes);
                 }
                 case 5 ->{
-                    int numCartes = Utils.LlegirInt("Quantes cartes vols: ");
-                    b.repartirCartes(numCartes);
-                    
+                    b.veureMunt();                    
                 }
                 case 6 ->{
-                    
-                    b.veureMunt();
-                }
-                case 7 ->{
-                    sortir = true;
+                    sortir = true;                    
                 }
                 default ->{
                     System.out.println("ERROR, TORNA A INTENTAR-HO ");

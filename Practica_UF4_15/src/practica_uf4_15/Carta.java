@@ -10,13 +10,15 @@ package practica_uf4_15;
  */
 public class Carta {
 
-    private int numero;
+    private String numero;
     private String palo;
 
-    public static final String[] PALS = {"Espadas", "Oros", "Copas", "Bastos"};
-    public static final int MAX_NUM_CARTA = 12; 
-
-    public Carta(int numero, String palo) {
+    public static final String[] PALS_ESPANOLA = {"Espadas", "Oros", "Copas", "Bastos"};
+    public static final String[] PALS_FRANCESA = {"Diamantes", "Picas", "Treboles", "Corazones"};
+    public static final int MAX_NUM_CARTA = 12;
+    
+    
+    public Carta(String numero, String palo) {
         this.numero = numero;
         this.palo = palo;
     }

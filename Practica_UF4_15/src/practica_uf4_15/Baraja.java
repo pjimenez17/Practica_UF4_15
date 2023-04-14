@@ -10,22 +10,19 @@ package practica_uf4_15;
  */
 import java.util.Random;
 
-public class Baraja {
+public abstract class Baraja {
 
-    private final int NUM_CARTES = 48;
-    private final int NUM_PALS = 4;
-
-
-    private Carta[] cartas;
-    private int posSiguienteCarta;
+    Carta[] cartas;
+     int posSiguienteCarta;
+     int numCartas;
+     int cartasPalo;
 
     public Baraja() {
-        cartas = new Carta[NUM_CARTES];
-        posSiguienteCarta = 0;
-        crearBaraja();
+        this.posSiguienteCarta = 0;
+
     }
 
-    private void crearBaraja() {
+    /*private void crearBaraja() {
         int pos = 0;
         String palos[] = Carta.PALS;
         for (int i = 0; i < NUM_PALS; i++) {
@@ -34,7 +31,8 @@ public class Baraja {
                 pos++;
             }
         }
-    }
+    }*/
+    public abstract void crearBaraja();
 
     public void barrejar() {
         Random rnd = new Random();
@@ -43,7 +41,7 @@ public class Baraja {
         Carta c;
 
         for (int i = 0; i < 10; i++) {
-            posicioAleatoria = rnd.nextInt(0, NUM_CARTES - 1);
+            posicioAleatoria = rnd.nextInt(0, numCartas - 1);
 
             c = cartas[i];
             cartas[i] = cartas[posicioAleatoria];
@@ -54,7 +52,7 @@ public class Baraja {
 
     public Carta seguentCarta() {
         Carta carta = null;
-        if (posSiguienteCarta == NUM_CARTES) {
+        if (posSiguienteCarta == numCartas) {
             System.out.println("No hay mes cartes en la baralla.");
         } else {
             carta = cartas[posSiguienteCarta];
@@ -64,7 +62,7 @@ public class Baraja {
     }
 
     public int cartesDisponibles() {
-        return NUM_CARTES - posSiguienteCarta;
+        return numCartas - posSiguienteCarta;
     }
 
     public Carta[] demanarCarta(int numCartes) {
@@ -75,7 +73,7 @@ public class Baraja {
                 cartasDemanades[i] = seguentCarta();
                 System.out.println(cartasDemanades[i]);
             }
-        }else if(numCartes > NUM_CARTES){
+        } else if (numCartes > numCartas) {
             System.out.println("ERROR");
         } else {
             System.out.println("No hi ha suficients cartes en la baralla.");
