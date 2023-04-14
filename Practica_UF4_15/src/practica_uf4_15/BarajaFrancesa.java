@@ -15,7 +15,7 @@ public class BarajaFrancesa extends Baraja {
         this.numCartas = 52;
         this.cartasPalo = 13;
         crearBaraja();
-        //super.barrejar();
+        super.barrejar();
 
     }
 
