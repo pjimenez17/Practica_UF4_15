@@ -15,40 +15,27 @@ public class BarajaEspanola extends Baraja {
         this.numCartas = 40;
         this.cartasPalo = 10;
         crearBaraja();
-        super.barrejar();
+        //super.barrejar();
 
     }
 
     @Override
     public void crearBaraja() {
         this.cartas = new Carta[numCartas];
-        String valorCarta = "";
 
         String palos[] = Carta.PALS_ESPANOLA;
-        for (int i = 0; i < cartasPalo; i++) {
-            for (int j = 1; j <= numCartas; j++) {
-                if (!(j == 8 || j == 9)) {
-                    if (j > 9) {
-                        if (j == 10) {
-                            valorCarta = "Sota";
-                        } else if (j == 11) {
-                            valorCarta = "Caballo";
-                        } else if (j == 12) {
-                            valorCarta = "Rey";
-                        }
-                        cartas[((i * cartasPalo) + j)] = new Carta(valorCarta, palos[i]);
-                    } else {
-                        if (j == 1) {
-                            valorCarta = "As";
-                        } else {
-                            valorCarta = String.valueOf(j);
-                        }
-                        cartas[((i * cartasPalo-2) + j)] = new Carta(valorCarta, palos[i]);
-                    }
-                }
 
+        for (int i = 0; i < palos.length; i++) {
+
+            for (int j = 0; j < cartasPalo; j++) {
+
+                if (j >= 7) {
+                    cartas[((i * cartasPalo) + j)] = new Carta(j + 3, palos[i]);
+                } else {
+                    cartas[((i * cartasPalo) + j)] = new Carta(j + 1, palos[i]);
+                }
             }
+
         }
     }
-
 }

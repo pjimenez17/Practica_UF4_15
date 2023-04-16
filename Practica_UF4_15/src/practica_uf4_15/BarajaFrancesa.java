@@ -28,21 +28,18 @@ public class BarajaFrancesa extends Baraja {
         String palos[] = Carta.PALS_FRANCESA;
         for (int i = 0; i < palos.length; i++) {
             for (int j = 1; j <= cartasPalo; j++) {
-                if (j == 1) {
-                    valorCarta = "A";
-                } else if (j == 11) {
-                    valorCarta = "J";
-                } else if (j == 12) {
-                    valorCarta = "Q";
-                } else if (j == 13) {
-                    valorCarta = "K";
-                } else {
-                    valorCarta = String.valueOf(j);
-                }
-                cartas[pos] = new Carta(valorCarta, palos[i]);
+                cartas[pos] = new Carta(j, palos[i]);
                 pos++;
             }
         }
+    }
+    
+    public boolean vermell(Carta c){
+        return c.palo.equals(Carta.PALS_FRANCESA[0]) || c.palo.equals(Carta.PALS_FRANCESA[3]);
+    }
+    
+    public boolean negre(Carta c){
+        return c.palo.equals(Carta.PALS_FRANCESA[1]) || c.palo.equals(Carta.PALS_FRANCESA[2]);
     }
 
 }

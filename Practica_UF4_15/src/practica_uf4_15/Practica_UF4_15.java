@@ -20,7 +20,7 @@ public class Practica_UF4_15 {
             
             switch(opcioBaralla){
                 case 1 ->{
-                    b = new BarajaEspanola();
+                     b = new BarajaEspanola();
                     sortir = true;
                 }case 2 ->{
                     b = new BarajaFrancesa();

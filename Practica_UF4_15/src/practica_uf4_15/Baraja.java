@@ -40,7 +40,7 @@ public abstract class Baraja {
         int posicioAleatoria = 0;
         Carta c;
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < cartas.length; i++) {
             posicioAleatoria = rnd.nextInt(0, numCartas - 1);
 
             c = cartas[i];
