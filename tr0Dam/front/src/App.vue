@@ -1,5 +1,5 @@
 <script>
-import { getPreguntes, deletePregunta, addPregunta, updatePregunta, getEstadisticas } from './communicationsManager';
+import { getPreguntes, deletePregunta, addPregunta, updatePregunta } from './communicationsManager';
 
 export default {
 
@@ -28,10 +28,8 @@ export default {
         respuesta_correcta: 0,
         imagen: ""
       },
-      estadistiques: [],
       verAfegirPregunta: false,
       verEditarPregunta: false,
-      verStats: false
     }
   },
 
@@ -48,7 +46,6 @@ export default {
       //Recibe la pregunta entera
       this.preguntaEditada = { ...pregunta }
     },
-
     esborrarPregunta(id) {
       deletePregunta(id);
       getPreguntes(this)
@@ -80,12 +77,8 @@ export default {
         respuesta_correcta: 0,
         imagen: ""
       };
-    },
-    async veureEstadistiques() {
-      this.verStats = true;
-      await getEstadisticas(this);
-      this.estadistiques = this.estadisticas;
     }
+
 
 
   }
@@ -95,7 +88,7 @@ export default {
 <template>
   <div class="mostrarMenu" aria-setsize="6">
     <button @click="afegirPregunta" style="background-color: green; color: white;">Afegir Pregunta</button><br>
-    <button @click="veureEstadistiques" style="background-color: blue; color: white;">Veure Estadistiques</button><br><br>
+    <button @click="" style="background-color: blue; color: white;">Veure Estadistiques</button><br><br>
     <br>
     <ul>
       <!-- Entre parentesis se crea la pregunta y un indice que va iterando en preguntas, el indice es una variable que va aumentando++ -->
@@ -139,8 +132,7 @@ export default {
   </div>
 
   <!-- Menu de editar preguntes-->
-  <div class="mostrarEditarPregunta" aria-setsizew
-  ="6" v-if="verEditarPregunta">
+  <div class="mostrarEditarPregunta" aria-setsize="6" v-if="verEditarPregunta">
     <h2>Editar pregunta</h2>
     <form @submit="actualizarPregunta()">
       <label for="pregunta">Pregunta: </label>
@@ -158,10 +150,6 @@ export default {
       <button type="submit">Guardar Edición</button>
     </form>
 
-  </div>
-  <div class="mostrarStats" aria-setsize="6" v-if="verStats">
-    <h2>Estadísticas</h2>
-    <p>{{ estadistiques }}</p>
   </div>
 </template>
 

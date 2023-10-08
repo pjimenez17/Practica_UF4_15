@@ -2,36 +2,19 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const cors = require('cors');
+
 const app = express();
 const port = 3001;
+
+
 
 app.use(bodyParser.json());
 app.use(cors());
 
 const questionsFilePath = './questions.json';
 
-const { spawn } = require('child_process');
-
-const { spawn } = require('child_process');
-
-app.get('/estadistiques', (req, res) => {
-  const pythonProcess = spawn('python', ['./estadistiques.py']);
-
-  pythonProcess.stdout.on('data', (data) => {
-    const output = data.toString().trim(); 
-    res.json({ estadisticas: output }); 
-  });
-
-  pythonProcess.stderr.on('data', (data) => {
-    console.error(`Error: ${data}`);
-    res.status(500).json({ error: 'Error al ejecutar el programa Python.' });
-  });
-});
-
-
-
 // Endpoint para obtener todas las preguntas (GET)
-app.get('/questions', (req, res) => {
+app.get('/questions/', (req, res) => {
   fs.readFile(questionsFilePath, 'utf8', (err, data) => {
     if (err) {
       res.status(500).json({ error: 'No se pudo leer el archivo de preguntas.' });
@@ -48,7 +31,7 @@ app.get('/questions', (req, res) => {
 });
 
 // Endpoint para agregar una nueva pregunta (POST)
-app.post('/questions', (req, res) => {
+app.post('/questions/', (req, res) => {
   const newQuestion = req.body;
   console.log("el body recibido")
   console.log(newQuestion)

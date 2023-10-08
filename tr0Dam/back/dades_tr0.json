@@ -1,0 +1,124 @@
+{
+  "preguntas": [
+    {
+      "id": 1,
+      "pregunta": "¿Cuál de estos equipos ganó la Copa del Mundo en 2018?",
+      "opciones": [
+        "Brasil",
+        "Alemania",
+        "Francia",
+        "Argentina"
+      ],
+      "respuesta_correcta": 2,
+      "imagen": "https://acortar.link/76pERj"
+    },
+    {
+      "id": 2,
+      "pregunta": "¿En qué país se celebró la Copa del Mundo de 2014?",
+      "opciones": [
+        "Brasil",
+        "Alemania",
+        "Paises Bajos",
+        "México"
+      ],
+      "respuesta_correcta": 0,
+      "imagen": "https://acortar.link/tSvDxN"
+    },
+    {
+      "id": 3,
+      "pregunta": "¿Qué equipo es conocido como 'Los Diablos Rojos'?",
+      "opciones": [
+        "Manchester United",
+        "FC Barcelona",
+        "Real Madrid",
+        "Bayern Munich"
+      ],
+      "respuesta_correcta": 0,
+      "imagen": "https://acortar.link/Ic1tGr"
+    },
+    {
+      "id": 4,
+      "pregunta": "¿Cuál de estos jugadores es conocido como 'La Pulga'?",
+      "opciones": [
+        "Neymar",
+        "Cristiano Ronaldo",
+        "Lionel Messi",
+        "Kylian Mbappé"
+      ],
+      "respuesta_correcta": 2,
+      "imagen": "https://acortar.link/yGdIPK"
+    },
+    {
+      "id": 5,
+      "pregunta": "¿Cuál de estos equipos ha ganado más veces la Liga de Campeones de la UEFA?",
+      "opciones": [
+        "AC Milan",
+        "Liverpool",
+        "Barcelona",
+        "Real Madrid"
+      ],
+      "respuesta_correcta": 3,
+      "imagen": "https://acortar.link/SpGfZW"
+    },
+    {
+      "id": 6,
+      "pregunta": "¿En qué país se encuentra el estadio Maracaná?",
+      "opciones": [
+        "Argentina",
+        "Brasil",
+        "Uruguay",
+        "Chile"
+      ],
+      "respuesta_correcta": 1,
+      "imagen": "https://acortar.link/oD4Rip"
+    },
+    {
+      "id": 7,
+      "pregunta": "¿Cuál es el equipo más antiguo de la Premier League inglesa?",
+      "opciones": [
+        "Chelsea",
+        "Arsenal",
+        "Manchester United",
+        "Liverpool"
+      ],
+      "respuesta_correcta": 1,
+      "imagen": "https://acortar.link/MHQone"
+    },
+    {
+      "id": 8,
+      "pregunta": "¿Quién es el máximo goleador de la historia de la Copa del Mundo?",
+      "opciones": [
+        "Pele",
+        "Miroslav Klose",
+        "Diego Maradona",
+        "Ronaldo"
+      ],
+      "respuesta_correcta": 1,
+      "imagen": "https://acortar.link/AJQ8yT"
+    },
+    {
+      "id": 9,
+      "pregunta": "¿Qué país ha ganado más veces la Copa América?",
+      "opciones": [
+        "Brasil",
+        "Argentina",
+        "Uruguay",
+        "Chile"
+      ],
+      "respuesta_correcta": 0,
+      "imagen": "https://acortar.link/kgR1ng"
+    },
+    {
+      "id": 10,
+      "pregunta": "¿En qué año se celebró la primera Copa del Mundo de la FIFA?",
+      "opciones": [
+        "1930",
+        "1950",
+        "1960",
+        "1970"
+      ],
+      "respuesta_correcta": 0,
+      "imagen": "https://acortar.link/fCP82X"
+    }
+  ]
+}

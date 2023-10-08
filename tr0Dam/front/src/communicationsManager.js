@@ -1,6 +1,6 @@
 export async function getPreguntes(vueObject) {
   console.log("Fetching questions from server...");
-  const response = await fetch('http://localhost:3001/questions');
+  const response = await fetch('http://127.0.0.1:3001/questions/');
   const preguntas = await response.json();
   console.log("Questions obtained from server:", preguntas);
 
@@ -43,11 +43,4 @@ export async function updatePregunta(updatedQuestion, id) {
   } else {
     throw new Error(`Error al actualizar la pregunta: ${response.status}`);
   }
-
 }
-export async function getEstadisticas(vueObject) {
-  const response = await fetch('http://localhost:3001/estadistiques');
-  const data = await response.json();
-  vueObject.estadisticas = data.estadisticas; 
-}
-

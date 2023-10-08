@@ -118,5 +118,17 @@
     ],
     "respuesta_correcta": 0,
     "imagen": "https://acortar.link/fCP82X"
+  },
+  {
+    "id": "id_17_28_42_423",
+    "pregunta": "sdfsdf",
+    "opciones": [
+      "sdfsdfsd",
+      "fsdfs",
+      "fdsfsd",
+      "fsdfsdf"
+    ],
+    "respuesta_correcta": 0,
+    "imagen": "sdfsdfsd"
   }
 ]
